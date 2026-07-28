@@ -1,5 +1,5 @@
 /*
-====================== SCANNER CLASS ======================
+====================== INPUTS - SCANNER CLASS ======================
 
 Definition:
 - Scanner is a predefined class used to take input from the user.
