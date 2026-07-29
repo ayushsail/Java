@@ -79,7 +79,7 @@ String firstName;
 */
 
 
-public class variable {
+public class A2_variable {
     public static void main(String[] args) {
         System.out.println("VARIABLES\n");
 

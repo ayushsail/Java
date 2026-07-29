@@ -52,7 +52,7 @@ Important Notes:
 
 import java.util.Scanner;
 
-public class input {
+public class A3_scanner {
     public static void main(String[] args) {
         System.out.println("SCANNER - INPUTS\n");
 
@@ -115,7 +115,7 @@ public class input {
        breadth = a.nextDouble();
        
        double area = length*breadth;
-       System.out.println("The Area of Rectangle is "+area+"cm");
+       System.out.println("The Area of Rectangle is "+area+ "cm²");
        
 
 
