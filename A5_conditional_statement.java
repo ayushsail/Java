@@ -224,7 +224,7 @@ public class A5_conditional_statement {
             System.out.println("You are a teen.");
         }
         else if (age >=19 && age <=45) {
-            System.out.println("You are a uncle!!!");
+            System.out.println("You are a UNC!!!");
         }
         else if (age >=46 && age <=65) {
             System.out.println("You are getting old!!!");
