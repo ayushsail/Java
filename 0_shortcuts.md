@@ -1,4 +1,4 @@
-# Shortcuts 
+# Shortcuts  --- paste the snippets ins java.json in snippet configuration
 
 ### 1. soutf --> System.out.printf()
 ```
