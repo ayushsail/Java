@@ -20,7 +20,7 @@ Important Notes:
 */
 
 import java.util.Scanner;
-public class A10_SubString {
+public class B1_substrings {
     public static void main(String[] args) {
         System.out.println("SUBSTRING\n");
 
