@@ -6,10 +6,7 @@ Definition:
 - They execute different blocks of code depending on whether a
   condition is true or false.
 
-Conditions:
-- A condition is a boolean expression that evaluates to:
-    true
-    false
+Conditions - A condition is a boolean expression that evaluates to: either true or false
 
 Comparison Operators:
 ==    Equal to
@@ -25,9 +22,8 @@ Logical Operators:
 !     Logical NOT
 
 ---------------------------------------------------------------
-1. if Statement
+1. if Statement --> Executes a block of code only if the condition is true.
 ---------------------------------------------------------------
-- Executes a block of code only if the condition is true.
 
 Syntax:
 
@@ -35,17 +31,10 @@ if(condition){
     // code
 }
 
-Example:
-
-if(age >= 18){
-    System.out.println("You can vote.");
-}
-
 ---------------------------------------------------------------
-2. if-else Statement
+2. if-else Statement --> - Executes one block if the condition is true,
+                           otherwise executes another block.
 ---------------------------------------------------------------
-- Executes one block if the condition is true,
-  otherwise executes another block.
 
 Syntax:
 
@@ -56,22 +45,11 @@ else{
     // code if false
 }
 
-Example:
-
-if(isStudent){
-    System.out.println("Student");
-}
-else{
-    System.out.println("Not a Student");
-}
-
 ---------------------------------------------------------------
-3. else-if Ladder
+3. else-if Ladder --> - Used when multiple conditions need to be checked.
+                      - Once a condition becomes true, the remaining conditions are skipped.
 ---------------------------------------------------------------
-- Used when multiple conditions need to be checked.
-- Java evaluates conditions from top to bottom.
-- Once a condition becomes true, the remaining conditions
-  are skipped.
+
 
 Syntax:
 
@@ -88,91 +66,20 @@ else{
     ...
 }
 
-Example:
-
-if(age < 13){
-    System.out.println("Child");
-}
-else if(age < 20){
-    System.out.println("Teen");
-}
-else{
-    System.out.println("Adult");
-}
-
 ---------------------------------------------------------------
-4. Nested if Statement
+4. Nested if Statement --> An if statement inside another if statement.
 ---------------------------------------------------------------
-- An if statement inside another if statement.
 
-Example:
+syntax:
 
-if(age >= 18){
-    if(isStudent){
-        System.out.println("Adult Student");
+if(condition){
+    if(condition){
+        // code if true
+    }
+    else {
+        // code if false
     }
 }
-
----------------------------------------------------------------
-String Validation
----------------------------------------------------------------
-To check whether a String is empty:
-
-name.isEmpty()
-
-Returns:
-true  -> String has no characters
-false -> String contains text
-
-Example:
-
-while(name.isEmpty()){
-    System.out.println("Enter your name.");
-}
-
----------------------------------------------------------------
-Boolean Variables
----------------------------------------------------------------
-A boolean variable stores only two values:
-
-true
-false
-
-Example:
-
-boolean isStudent = true;
-
-if(isStudent){
-    System.out.println("Student");
-}
-
----------------------------------------------------------------
-Important Notes
----------------------------------------------------------------
-1. Every if condition must return true or false.
-
-2. Use == for comparison,
-   not = (assignment).
-
-Wrong:
-if(age = 18)
-
-Correct:
-if(age == 18)
-
-3. Curly braces {} improve readability
-   and are recommended even for single statements.
-
-4. Conditions are checked from top to bottom.
-
-5. else is optional and executes only when
-   all previous conditions are false.
-
-6. Multiple conditions can be combined using
-   logical operators (&&, ||, !).
-
-Example:
-if(age >= 18 && isStudent)
 
 ===============================================================
 */
@@ -207,7 +114,7 @@ public class A5_conditional_statement {
         isStudent = s.nextBoolean();
 
 
-        // Age Criteria
+        // Age Criteria --> else-if ladder
         if (age < 0) {
             System.out.println("You haven't born yet!!");
         }
@@ -246,6 +153,44 @@ public class A5_conditional_statement {
         }
 
 
+
+
+        // Nested - if-else
+        System.out.println("\n\nMovie Ticket Price\n");
+        double price = 100.0;
+        System.out.print("Enter your age : ");
+        int a = s.nextInt();
+
+        System.out.print("Are you a student : ");
+        boolean isStud = s.nextBoolean();
+
+        boolean isSenior = false;
+        if (a > 50) {
+            isSenior = true;
+        }
+
+        if (isStud) {
+            if (isSenior) {
+                System.out.println("You get a 10% 'Student Discount' on your movie ticket !!");
+                System.out.println("You get a 20% 'Senior Discount' on your movie ticket !!");
+                System.out.println("price of ticket is $"+(price*0.7)+ " only");
+            }
+            else {
+                System.out.println("You get a 10% 'Student Discount' on your movie ticket !!");
+                System.out.println("price of ticket is $"+(price*0.9)+ " only");
+            }
+        }
+        else if (isSenior) {
+            System.out.println("You get a 20% 'Senior Discount' on your movie ticket !!");
+            System.out.println("The price of ticket is $"+(price*0.8)+ " only");
+        }
+        
+        else {
+            System.out.println("The price of ticket is $"+price+ " only");
+
+        }
+
         s.close();
     }
 }
+
