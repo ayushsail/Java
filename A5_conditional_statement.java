@@ -80,8 +80,15 @@ if(condition){
         // code if false
     }
 }
+/*
+==================== TERNARY OPERATOR ====================
 
-===============================================================
+Definition:- A shorthand for if-else used to assign a value.
+
+Syntax:
+variable = (condition) ? value_if_true : value_if_false;
+
+==========================================================
 */
 
 import java.util.Scanner;
@@ -189,6 +196,26 @@ public class A5_conditional_statement {
             System.out.println("The price of ticket is $"+price+ " only");
 
         }
+
+
+
+        // Ternary Operator 
+
+        // PASS & FAIL
+        System.out.print("Enter your marks out of 100 : ");
+        double marks = s.nextDouble();
+
+        String result = (marks > 70) ? "PASS" : "FAIL";             // Ternary Operator
+        System.out.printf("Result : %s\n",result);
+
+
+        // EVEN OR ODD
+        System.out.print("Enter a num : ");
+        int num = s.nextInt();
+
+        String res = (num % 2 == 0) ? "EVEN" : "ODD";
+        System.out.printf("The number %d is %s\n",num,res);
+        
 
         s.close();
     }
