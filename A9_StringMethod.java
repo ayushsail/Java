@@ -32,7 +32,7 @@ Important Notes:
 ==========================================================
 */
 
-public class A9_String_method {
+public class A9_StringMethod {
     public static void main(String[] args) {
         System.out.println("STRING METHODS\n");
         String name = "Ayush G sail";

@@ -93,7 +93,7 @@ variable = (condition) ? value_if_true : value_if_false;
 
 import java.util.Scanner;
 
-public class A5_conditional_statement {
+public class A5_ConditionalStatement {
     public static void main(String[] args) {
         System.out.println("CONDITIONAL STATEMENT\n");
         Scanner s = new Scanner(System.in);
