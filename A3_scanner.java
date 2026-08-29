@@ -68,13 +68,17 @@ public class A3_scanner {
         System.out.print("What is your gpa : ");
         double gpa = s.nextDouble();
 
+        System.out.print("Enter your grade : ");
+        char grade = s.next().charAt(0);
+
         System.out.print("Are you a student? (true/false) : ");
         boolean isStudent = s.nextBoolean();
 
 
         System.out.println("\nHello!! "+name);
         System.out.println("You are "+age+ " years old.");
-        System.out.println("Your gpa is " +gpa);
+        System.out.println("Your gpa  is " +gpa);
+        System.out.println("Your grade  is " +grade);
         if (isStudent) { System.out.println(name+ " is a Student.");}
         else {System.out.println(name+ " is NOT a Student.");}
 
