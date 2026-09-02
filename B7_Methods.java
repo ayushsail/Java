@@ -19,6 +19,10 @@ METHOD OVERLOADING
 
 - Multiple methods can have the same name but different
   parameters.
+- signature = name + parameters
+- method's name and parameter will give a unique method signature.
+- each method signature should be unique, even if the name is same.
+- "NO TWO METHODS CAN SHARE SAME SIGNATURE"
 
 Example:
 static int add(int a, int b)       { return a + b; }
@@ -53,6 +57,12 @@ public class B7_Methods {
 
         int age = 19;
         System.out.printf("Age check : %b\n\n", ageCheck(age));
+
+
+        System.out.println("\n\nMETHOD OVERLOADING\n");
+
+        System.out.printf("4 + 5 = %d\n", add(4,5));
+        System.out.printf("4 + 5 + 6 = %d\n", add(4,5,6 ));
         
     }
 
@@ -66,13 +76,29 @@ public class B7_Methods {
         System.out.printf("Happy Birthday to you !!!\n\n");
     }
 
-    // a method which return some data, 
-    // should include the returntype of the method
-    static double square (double n) { return n*n; }
-    static double cube (double n) { return n*n*n; }
-    static String getFullName (String first, String last) { return first + " " + last; }
-    static boolean ageCheck (int age) { return age >=18; }
+    // a method which return some data,
+    // should include the returntype of the method instead of void
+    static double square (double n) { 
+        return n*n; 
+    }
+    static double cube (double n) { 
+        return n*n*n; 
+    }
+    static String getFullName (String first, String last) { 
+        return first + " " + last; 
+    }
+    static boolean ageCheck (int age) { 
+        return age >=18; 
+    }
 
+
+
+    // METHOD OVERLOADING EXAMPLE
+    // two add methods with different parameters
+
+    static int add (int a, int b) { return a+b; }
+    
+    static int add (int a, int b, int c) { return a+b+c; }
 
 
 }
