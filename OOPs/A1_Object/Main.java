@@ -9,7 +9,7 @@ Definition:
 Example:
 Car car = new Car();
 
-- Car     → class/type
+- Car     → class
 - car     → reference variable
 - new Car() → creates an object
 
