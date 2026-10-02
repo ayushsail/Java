@@ -44,7 +44,7 @@ IMPORTANT:
 ==================================================================
 */
 
-package OOPs.A10_Abstract;
+package OOPs.A10_Abstraction;
 
 public class Main {
     public static void main(String[] args) {

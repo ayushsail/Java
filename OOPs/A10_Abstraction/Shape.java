@@ -1,4 +1,4 @@
-package OOPs.A10_Abstract;
+package OOPs.A10_Abstraction;
 
 // ABSTRACT CLASS
 public abstract class Shape {
