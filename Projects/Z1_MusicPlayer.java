@@ -2,6 +2,7 @@ package Projects;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Random;
 import java.util.Scanner;
 
 import javax.sound.sampled.AudioInputStream;
@@ -18,9 +19,16 @@ public class Z1_MusicPlayer {
 
         // supported files - .wav, .au, .aiff
 
-        String filePath = "D:\\ULTRON\\JAVA\\Projects\\Kendrick Lamar - tv off.wav";
+        String[] songs = {"D:\\ULTRON\\JAVA\\Projects\\songs\\tv off.wav",
+                          "D:\\ULTRON\\JAVA\\Projects\\songs\\gnx.wav",
+                          "D:\\ULTRON\\JAVA\\Projects\\songs\\peekaboo.wav",
+                          "D:\\ULTRON\\JAVA\\Projects\\songs\\squabble up.wav",
+                          "D:\\ULTRON\\JAVA\\Projects\\songs\\wacced out murals.wav"
+        };
 
-        File file = new File(filePath);
+        Random r = new Random();
+
+        File file = new File(songs[r.nextInt(songs.length)]);
 
         try (Scanner s = new Scanner(System.in);
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(file)) {
