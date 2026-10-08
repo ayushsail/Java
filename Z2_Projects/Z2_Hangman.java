@@ -17,7 +17,7 @@ public class Z2_Hangman {
         System.out.println("     DOMAIN: Fruit     \n\n");
         Scanner s = new Scanner(System.in);
 
-        String filePath = "D:\\ULTRON\\JAVA\\Projects\\words.txt";
+        String filePath = "D:\\ULTRON\\JAVA\\Z2_Projects\\words.txt";
         ArrayList<String> wordList = new ArrayList<>();
 
         try (BufferedReader r = new BufferedReader(new FileReader(filePath))) {
@@ -53,13 +53,13 @@ public class Z2_Hangman {
 
             if (word.indexOf(guess) >= 0) {
                 System.out.println("Correct guess !");
-                display(wordState);
                 System.out.print(getHangmanArt(wrongGuesses));
                 for (int i = 0; i < word.length(); i++) {
                     if (word.charAt(i) == guess) {
                         wordState.set(i, guess);
                     }
                 }
+                display(wordState);
                 if (!wordState.contains('_')) {
                     System.out.print(getHangmanArt(wrongGuesses));
                     System.out.println("YOU WON !");

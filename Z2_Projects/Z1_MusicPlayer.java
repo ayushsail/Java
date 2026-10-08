@@ -19,11 +19,11 @@ public class Z1_MusicPlayer {
 
         // supported files - .wav, .au, .aiff
 
-        String[] songs = {"D:\\ULTRON\\JAVA\\Projects\\songs\\tv off.wav",
-                          "D:\\ULTRON\\JAVA\\Projects\\songs\\gnx.wav",
-                          "D:\\ULTRON\\JAVA\\Projects\\songs\\peekaboo.wav",
-                          "D:\\ULTRON\\JAVA\\Projects\\songs\\squabble up.wav",
-                          "D:\\ULTRON\\JAVA\\Projects\\songs\\wacced out murals.wav"
+        String[] songs = {"D:\\ULTRON\\JAVA\\Z2_Projects\\songs\\tv off.wav",
+                          "D:\\ULTRON\\JAVA\\Z2_Projects\\songs\\gnx.wav",
+                          "D:\\ULTRON\\JAVA\\Z2_Projects\\songs\\peekaboo.wav",
+                          "D:\\ULTRON\\JAVA\\Z2_Projects\\songs\\squabble up.wav",
+                          "D:\\ULTRON\\JAVA\\Z2_Projects\\songs\\wacced out murals.wav"
         };
 
         Random r = new Random();
