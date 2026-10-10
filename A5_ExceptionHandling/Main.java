@@ -117,7 +117,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("EXCEPTION HANDLING\n");
 
-        try (Scanner s = new Scanner(System.in)) {
+        try (Scanner s = new Scanner(System.in)) {          // Try-with-resources
             System.out.println("DIVISION");
             System.out.print("Enter first number : ");
             int a = s.nextInt();
