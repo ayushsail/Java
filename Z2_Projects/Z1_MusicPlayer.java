@@ -2,7 +2,6 @@ package Z2_Projects;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Random;
 import java.util.Scanner;
 
 import javax.sound.sampled.AudioInputStream;
@@ -15,45 +14,63 @@ import javax.sound.sampled.LineUnavailableException;
 
 public class Z1_MusicPlayer {
     public static void main(String[] args) {
-        System.out.println("MUSIC PLAYER\n");
 
-        // supported files - .wav, .au, .aiff
+        // supported files formats - .wav, .au, .aiff
 
-        String[] songs = {"D:\\ULTRON\\JAVA\\Z2_Projects\\songs\\tv off.wav",
+        String[] songs = {"D:\\ULTRON\\JAVA\\Z2_Projects\\songs\\peekaboo.wav",
                           "D:\\ULTRON\\JAVA\\Z2_Projects\\songs\\gnx.wav",
-                          "D:\\ULTRON\\JAVA\\Z2_Projects\\songs\\peekaboo.wav",
+                          "D:\\ULTRON\\JAVA\\Z2_Projects\\songs\\tv off.wav",
                           "D:\\ULTRON\\JAVA\\Z2_Projects\\songs\\squabble up.wav",
                           "D:\\ULTRON\\JAVA\\Z2_Projects\\songs\\wacced out murals.wav"
         };
 
-        Random r = new Random();
+        int currentSong = 2;
 
-        File file = new File(songs[r.nextInt(songs.length)]);
+        try (Scanner s = new Scanner(System.in)) {
 
-        try (Scanner s = new Scanner(System.in);
-        AudioInputStream audioStream = AudioSystem.getAudioInputStream(file)) {
-
-            Clip clip = AudioSystem.getClip();
-            clip.open(audioStream);
+            Clip clip = loadClip(songs[currentSong]);
 
             String response = "";
             
             while ( !response.equals("Q")) {
-                System.out.println("P : Play\nS : Stop\nR : Reset\nQ : Quit");
+                System.out.println("\n\n**************************************");
+                System.out.println("*************MUSIC PLAYER*************");
+                System.out.println("**************************************");
+                System.out.println("P : Play\nS : Stop\nR : Reset\nN : Next Song\nB : Previous Song\nQ : Quit");
+                System.out.println("**************************************");
+                System.out.println("CURRENT SONG : " +new File(songs[currentSong]).getName());
+                System.out.println("**************************************");
                 System.out.print("Enter your choice : ");
                 response = s.next().toUpperCase();
 
                 switch (response) {
-                    case "P" -> clip.start();
-                    case "S" -> clip.stop();
-                    case "R" -> clip.setMicrosecondPosition(0);
-                    case "Q" -> clip.close();
+                    case "P" -> clip.start();       // PLAY
+                    case "S" -> clip.stop();        // STOP
+                    case "R" -> clip.setMicrosecondPosition(0);     // RESET
+
+                    case "N" -> {           // NEXT
+                        clip.stop(); 
+                        clip.close();
+
+                        currentSong = (currentSong + 1) % songs.length;
+                        clip = loadClip(songs[currentSong]);
+                        clip.start();
+                    }
+
+                    case "B" -> {           // PREVIOUS
+                        clip.stop();
+                        clip.close();
+
+                        currentSong = (currentSong - 1 + songs.length) % songs.length;
+                        clip = loadClip(songs[currentSong]);
+                        clip.start();
+                    }
+
+                    case "Q" -> clip.close();           // QUIT
+
                     default -> System.out.println("Invalid choice !");
                 }
-
             }
-
-
         }
 
         catch (FileNotFoundException e) {
@@ -76,7 +93,23 @@ public class Z1_MusicPlayer {
             System.out.println("\n\nThankyou! Bye Bye!!");
         }
 
+    }
 
-        
+
+    // Load an audio file and return it's clip
+    static Clip loadClip (String filePath) 
+        throws IOException, UnsupportedAudioFileException,
+            LineUnavailableException {
+        // These above mentioned exceptions are passed to the calling method.
+
+        File file = new File(filePath);
+
+        try (AudioInputStream audioStream = AudioSystem.getAudioInputStream(file)) {
+
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioStream);
+
+            return clip;
+        }
     }
 }
