@@ -44,11 +44,11 @@ public class Z1_MusicPlayer {
                 response = s.next().toUpperCase();
 
                 switch (response) {
-                    case "P" -> clip.start();       // PLAY
-                    case "S" -> clip.stop();        // STOP
+                    case "P" -> clip.start();           // PLAY
+                    case "S" -> clip.stop();            // STOP
                     case "R" -> clip.setMicrosecondPosition(0);     // RESET
 
-                    case "N" -> {           // NEXT
+                    case "N" -> {                       // NEXT
                         clip.stop(); 
                         clip.close();
 
@@ -57,7 +57,7 @@ public class Z1_MusicPlayer {
                         clip.start();
                     }
 
-                    case "B" -> {           // PREVIOUS
+                    case "B" -> {                       // PREVIOUS
                         clip.stop();
                         clip.close();
 
