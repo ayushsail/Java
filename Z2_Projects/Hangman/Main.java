@@ -1,4 +1,4 @@
-package Z2_Projects;
+package Z2_Projects.Hangman;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -9,7 +9,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 
-public class Z2_Hangman {
+public class Main {
     public static void main(String[] args) {
         System.out.println("***********************");
         System.out.println("WELCOME TO HANGMAN GAME");
@@ -17,7 +17,7 @@ public class Z2_Hangman {
         System.out.println("     DOMAIN: Fruit     \n\n");
         Scanner s = new Scanner(System.in);
 
-        String filePath = "D:\\ULTRON\\JAVA\\Z2_Projects\\words.txt";
+        String filePath = "D:\\ULTRON\\JAVA\\Z2_Projects\\Hangman\\words.txt";
         ArrayList<String> wordList = new ArrayList<>();
 
         try (BufferedReader r = new BufferedReader(new FileReader(filePath))) {

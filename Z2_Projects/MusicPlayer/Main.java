@@ -1,4 +1,4 @@
-package Z2_Projects;
+package Z2_Projects.MusicPlayer;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,16 +12,16 @@ import java.io.IOException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.sound.sampled.LineUnavailableException;
 
-public class Z1_MusicPlayer {
+public class Main {
     public static void main(String[] args) {
 
         // supported files formats - .wav, .au, .aiff
 
-        String[] songs = {"D:\\ULTRON\\JAVA\\Z2_Projects\\songs\\peekaboo.wav",
-                          "D:\\ULTRON\\JAVA\\Z2_Projects\\songs\\gnx.wav",
-                          "D:\\ULTRON\\JAVA\\Z2_Projects\\songs\\tv off.wav",
-                          "D:\\ULTRON\\JAVA\\Z2_Projects\\songs\\squabble up.wav",
-                          "D:\\ULTRON\\JAVA\\Z2_Projects\\songs\\wacced out murals.wav"
+        String[] songs = {"D:\\ULTRON\\JAVA\\Z2_Projects\\MusicPlayer\\songs\\peekaboo.wav",
+                          "D:\\ULTRON\\JAVA\\Z2_Projects\\MusicPlayer\\songs\\gnx.wav",
+                          "D:\\ULTRON\\JAVA\\Z2_Projects\\MusicPlayer\\songs\\tv off.wav",
+                          "D:\\ULTRON\\JAVA\\Z2_Projects\\MusicPlayer\\songs\\squabble up.wav",
+                          "D:\\ULTRON\\JAVA\\Z2_Projects\\MusicPlayer\\songs\\wacced out murals.wav"
         };
 
         int currentSong = 2;
